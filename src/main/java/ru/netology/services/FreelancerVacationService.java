@@ -4,11 +4,14 @@ public class FreelancerVacationService {
     public int calcVacationMonths(int income, int expenses, int threshold){
         int savings = 0;
         int vacationMonths = 0;
-        for (int month = 1; month <= 12; month++) {
-            savings += income - expenses;
+        for (int month = 0; month < 12; month++) {
             if (savings >= threshold) {
                 vacationMonths++;
-                savings = 0;
+                savings -= expenses;
+                savings = savings / 3;
+            } else {
+                savings += income;
+                savings -= expenses;
             }
         }
         return vacationMonths;

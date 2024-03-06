@@ -11,7 +11,7 @@ public class FreelancerVacationServiceTest {
         int income = 10_000;
         int expenses = 3_000;
         int threshold = 20_000;
-        int expectedVacationMonths = 4;
+        int expectedVacationMonths = 3;
         int actualVacationMonths = service.calcVacationMonths(income, expenses, threshold);
         Assertions.assertEquals(expectedVacationMonths, actualVacationMonths);
     }
